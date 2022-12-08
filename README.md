@@ -1,7 +1,8 @@
 # jgrun
 commandline program to run another program on different user credential. 
-it could serve as *runas* command alternative on areas where you need to execute background tasks on different user accounts like on task automations. 
-jgrun allows you to specify a clear-text password or an encrypted one.
+
+## background
+there are several situations where you need to run tasks in the background with no user interaction on a different user accounts e.g. task automations, testing etc. this utility was created to replace the *runas* command and allows you to specify a clear-text password or an encrypted one on the commandline. it doesnt have any GUI or other more functions like other available runas alternatives in the internet; and is designed to be made simple and small in footprint.
 
 ### Usage:
 
@@ -38,3 +39,5 @@ jgrun allows you to specify a clear-text password or an encrypted one.
 
 ### security matters: 
 simple XOR operation and AES-based encryption is used to encrypt the password and the key before converting them to base64 string. it utilizes the module GUID attribute as the other 32byte encryption key. it can be modified to use other parameters like the domain and user info into the encryption flow; as well as using system unique properties like machine UUID or SID to limit its validity on that system.
+
+also note that the released binary is not the obfuscated build. there are several .Net obfuscation tools which you can use if you need to distribute the module.
