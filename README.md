@@ -1,9 +1,8 @@
 # jgrun
 
-### introduction
 *jgrun* utility is a commandline program to run another program on different user credential, i.e. as a *runas* command alternative. runas command doesnt allow you to specify the user's password and thus couldnt be used for task automations. jgrun allows you to specify a clear-text password or an encrypted one.
 
-*Usage:*
+### Usage:
 
 >`$>jgrun [exePath] [options] [domain] [username] [password] [encKey]`
 > 
@@ -23,7 +22,7 @@
 >  - password  - clear-type password of the user 
 >  - encKey    - 256bit (32byte) AES key
 
-*Sample:*
+### Samples:
 - Generating the encrypted password and key
 > `$>jgrun  myPassW0rd My32BytePersonalEncryptionAESKey`
 >
@@ -37,4 +36,4 @@
 > if the user id is a local user account, specify the computername or use the env variable %COMPUTERNAME% as your domain name.
 
 ### security matters: 
-simple XOR operation and AES-based encryption is used to encrypt the password and the key before converting them to base64 string. it utilizes the module GUID attribute as the other 32byte encryption key.  
+simple XOR operation and AES-based encryption is used to encrypt the password and the key before converting them to base64 string. it utilizes the module GUID attribute as the other 32byte encryption key. it can be modified to use other parameters like the domain and user info into the encryption flow; as well as using system unique properties like machine UUID or SID to limit its validity on that system.
