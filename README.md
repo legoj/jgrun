@@ -1,5 +1,7 @@
 # jgrun
-*jgrun* utility is a commandline program to run another program on different user credential, i.e. as a *runas* command alternative. runas command doesnt allow you to specify the user's password and thus couldnt be used for task automations. jgrun allows you to specify a clear-text password or an encrypted one.
+commandline program to run another program on different user credential. 
+it could serve as *runas* command alternative on areas where you need to execute background tasks on different user accounts like on task automations. 
+jgrun allows you to specify a clear-text password or an encrypted one.
 
 ### Usage:
 
