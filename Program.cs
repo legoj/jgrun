@@ -42,6 +42,8 @@ Parameters:
         {
             try
             {
+                string v_NOWINDOW = Environment.GetEnvironmentVariable("JG_NOWINDOW");
+                string v_NOWAIT = Environment.GetEnvironmentVariable("JG_NOWAIT");
                 System.Diagnostics.Process p = new System.Diagnostics.Process();
                 System.Diagnostics.ProcessStartInfo n = p.StartInfo;
                 System.Security.SecureString s = new System.Security.SecureString();
@@ -54,7 +56,9 @@ Parameters:
                 foreach (char c in w) s.AppendChar(c);
                 w = "";
                 n.Password = s;
+                if(v_NOWINDOW != null) n.CreateNoWindow = true;
                 p.Start();
+                if (v_NOWAIT == null) return 0;
                 p.WaitForExit();
                 return p.ExitCode;
             }
