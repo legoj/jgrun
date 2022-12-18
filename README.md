@@ -1,5 +1,5 @@
 # jgrun
-commandline program to run another program on different user credential. 
+Commandline program to run another program on the different process and user credential. 
 
 ## background
 there are several situations where you need to run tasks in the background with no user interaction on a different user accounts e.g. task automations, testing etc. this utility was created to replace the *runas* command and allows you to specify a clear-text password or an encrypted one on the commandline. it doesnt have any GUI or other more functions like other available runas alternatives in the internet; and is designed to be made simple and small in footprint.
