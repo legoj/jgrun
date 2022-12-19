@@ -58,7 +58,7 @@ Parameters:
                 n.Password = s;
                 if(v_NOWINDOW != null) n.CreateNoWindow = true;
                 p.Start();
-                if (v_NOWAIT == null) return 0;
+                if (v_NOWAIT != null) return 0;
                 p.WaitForExit();
                 return p.ExitCode;
             }
