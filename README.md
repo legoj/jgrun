@@ -14,7 +14,7 @@ there are several situations where you need to run tasks in the background with 
 >  - domain   - user domain  
 >  - username - user name or id 
 >  - password - user password. if encrypted, specify the generated encKey 
->  - encKey   - base64-string encryption key used to encrypt the password 
+>  - encKey   - base64-string returned by the tool (see below for details)
   
 *jgrun* has the function to encrypt the password with your specified 32byte (256bit) AES key and returns the both the encrypted password and key in base64 string format which will be used as the password and encKey parameters. to generate the encrypted password and key, follow the usage below:
 
