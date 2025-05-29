@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text;
 using System.Security.Cryptography;
 using System.IO;
@@ -44,10 +44,13 @@ Parameters:
             {
                 string v_NOWINDOW = Environment.GetEnvironmentVariable("JG_NOWINDOW");
                 string v_NOWAIT = Environment.GetEnvironmentVariable("JG_NOWAIT");
+                string v_LOADUP = Environment.GetEnvironmentVariable("JG_LOADUP");
                 System.Diagnostics.Process p = new System.Diagnostics.Process();
                 System.Diagnostics.ProcessStartInfo n = p.StartInfo;
+                    
                 System.Security.SecureString s = new System.Security.SecureString();
                 n.UseShellExecute = false;
+                n.LoadUserProfile = (v_LOADUP != null);
                 n.FileName = a[0];
                 n.Arguments = a[1];
                 n.Domain = a[2];
@@ -67,6 +70,7 @@ Parameters:
                 return XP(-1,e.InnerException == null ? e.Message : e.InnerException.Message);
             }
         }
+
         private static int XP(int i, string t)
         {
             if (i == 0) _O.WriteLine(t); else _E.WriteLine(t);
