@@ -24,6 +24,12 @@ there are several situations where you need to run tasks in the background with 
 >  - password  - clear-type password of the user 
 >  - encKey    - 256bit (32byte) AES key
 
+#### Process controls:
+environment variables are used to control some of the behavior of the process startup. before invoking this tool, set the environment variable to the desired value if needed.
+> JG_NOWINDOW - sets the *CreateNoWindow* property of the startup info object to **true**
+> JG_NOWAIT - if specified, the tool will wait for the process to exit
+> JG_LOADUP - sets the *LoadUserProfile* property of the startup info object to **true**
+
 ### Samples:
 - Generating the encrypted password and key
 > `$>jgrun  myPassW0rd My32BytePersonalEncryptionAESKey`
